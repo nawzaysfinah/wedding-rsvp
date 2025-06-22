@@ -1,16 +1,16 @@
 const Hero = () => {
   return (
-    <section className="h-screen w-full flex flex-col items-center px-6 pt-24 text-center bg-transparent text-[#FFC300]">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">
+    <section className="w-full h-screen mt-20 px-6 text-center flex flex-col items-center bg-transparent text-[#FFC300]">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
         Syazwan & Huan are getting married
       </h1>
-      <p className="text-lg md:text-xl mb-2">
-        Burkill Hall, National Orchid Garden, Singapore Botanic Gardens<br></br>
-        25th October 2025<br></br>
+      <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+        Burkill Hall, National Orchid Garden, Singapore Botanic Gardens
+        <br />
+        25th October 2025
+        <br />
         Attire: Linen, Florals & Comfort
       </p>
-      {/* <p className="text-md md:text-lg mb-4">25th October 2025</p>
-      <p className="italic text-yellow-500">Attire: Linen, Florals & Comfort</p> */}
     </section>
   );
 };

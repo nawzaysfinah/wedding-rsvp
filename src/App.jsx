@@ -8,20 +8,20 @@ import Schedule from "./components/Schedule";
 
 function App() {
   return (
-    <>
-      <main
-        className="min-h-screen w-full m-0 p-0 bg-[#fdfaf6] bg-cover bg-center bg-no-repeat bg-fixed overflow-x-hidden"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
-      >
+    <div
+      className="min-h-screen w-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-x-hidden"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
+      <main>
         <Hero />
         <VenueDetails />
         <Gallery />
         <Schedule />
         <RSVPSection />
       </main>
-    </>
+    </div>
   );
 }
 

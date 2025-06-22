@@ -12,28 +12,29 @@ function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="h-screen w-full bg-[#fdfaf6] py-12 px-4">
+    <section id="rsvp" className="h-screen w-full py-12 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-4">RSVP</h2>
         <p className="text-center mb-6">
-          Please select the group you were invited to. If you’re unsure, refer
-          to your invitation.
+          Please select the group you were invited to.<br></br>
+          If you’re unsure, refer to your invitation.
         </p>
 
-        <div className="flex justify-center gap-4 mb-8 flex-wrap">
+        <div className="flex justify-center items-center gap-12 mb-8">
           <button
             onClick={() => setSelectedForm("lunch")}
-            className="px-4 py-2 bg-[#f0eae2] rounded hover:bg-[#e6ddd3]"
+            className="px-6 py-3 text-lg font-semibold bg-[#87CEEB] rounded-full shadow-md hover:bg-[#e6ddd3] transition-colors duration-300"
           >
             🥢 Lunch (Family)
           </button>
           <button
             onClick={() => setSelectedForm("dinner")}
-            className="px-4 py-2 bg-[#f0eae2] rounded hover:bg-[#e6ddd3]"
+            className="px-6 py-3 text-lg font-semibold bg-[#87CEEB] rounded-full shadow-md hover:bg-[#e6ddd3] transition-colors duration-300"
           >
             🍽️ Dinner (Friends)
           </button>
         </div>
+        <br></br>
 
         {selectedForm && formLinks[selectedForm] && (
           <div className="w-full h-[700px] border rounded overflow-hidden">
@@ -43,6 +44,7 @@ function RSVPSection() {
               height="100%"
               frameBorder="0"
               title="RSVP Form"
+              style={{ backgroundColor: "transparent" }}
             >
               Loading…
             </iframe>
