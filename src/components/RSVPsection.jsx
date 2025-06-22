@@ -12,12 +12,16 @@ function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="h-screen w-full py-12 px-4">
+    <section
+      id="rsvp"
+      className="h-screen w-full px-4 flex items-center justify-center text-[#FFC300]"
+    >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-4">RSVP</h2>
         <p className="text-center mb-6">
           Please select the group you were invited to.<br></br>
-          If you’re unsure, refer to your invitation.
+          If you’re unsure, refer to your invitation.<br></br>
+          <br></br>
         </p>
 
         <div className="flex justify-center items-center gap-12 mb-8">
@@ -37,7 +41,7 @@ function RSVPSection() {
         <br></br>
 
         {selectedForm && formLinks[selectedForm] && (
-          <div className="w-full h-[700px] border rounded overflow-hidden">
+          <div className="w-[80%] h-[700px] border rounded overflow-hidden mx-auto">
             <iframe
               src={formLinks[selectedForm]}
               width="100%"

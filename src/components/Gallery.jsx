@@ -36,7 +36,7 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section className="h-screen w-full">
+    <section className="h-screen w-full flex items-start pt-[50px]">
       <div className="w-[90%] mx-auto overflow-hidden py-8 rounded-[20px]">
         <div
           ref={scrollRef}

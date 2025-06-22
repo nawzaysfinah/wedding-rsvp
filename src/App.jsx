@@ -15,13 +15,25 @@ function App() {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      <main>
-        <Hero />
-        <VenueDetails />
-        <Gallery />
-        <GoogleMap />
-        <Schedule />
-        <RSVPSection />
+      <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+        <section className="snap-start h-screen">
+          <Hero />
+        </section>
+        <section className="snap-start h-screen">
+          <VenueDetails />
+        </section>
+        <section className="snap-start h-screen">
+          <Gallery />
+        </section>
+        <section className="snap-start h-screen">
+          <GoogleMap />
+        </section>
+        <section className="snap-start h-screen">
+          <Schedule />
+        </section>
+        <section className="snap-start h-screen">
+          <RSVPSection />
+        </section>
       </main>
     </div>
   );
