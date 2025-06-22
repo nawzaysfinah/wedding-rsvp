@@ -5,6 +5,7 @@ import Gallery from "./components/gallery";
 import VenueDetails from "./components/VenueDetails";
 import backgroundImage from "./assets/gallery/photo1.jpeg";
 import Schedule from "./components/Schedule";
+import GoogleMap from "./components/GoogleMap";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Hero />
         <VenueDetails />
         <Gallery />
+        <GoogleMap />
         <Schedule />
         <RSVPSection />
       </main>
