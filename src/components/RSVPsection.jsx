@@ -12,7 +12,7 @@ function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="bg-[#fdfaf6] py-12 px-4">
+    <section id="rsvp" className="h-screen w-full bg-[#fdfaf6] py-12 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-4">RSVP</h2>
         <p className="text-center mb-6">

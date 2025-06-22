@@ -1,42 +1,26 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Hero from "./components/Hero";
 import RSVPSection from "./components/RSVPSection";
 import Gallery from "./components/gallery";
+import VenueDetails from "./components/VenueDetails";
+import backgroundImage from "./assets/gallery/photo1.jpeg";
+import Schedule from "./components/Schedule";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Gallery />
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-
-      <div className="min-h-screen bg-green-100 flex items-center justify-center">
-        <h1 className="text-3xl font-bold text-gray-800">Hello Tailwind 🐚</h1>
-      </div>
-
-      <RSVPSection />
+      <main
+        className="min-h-screen w-full m-0 p-0 bg-[#fdfaf6] bg-cover bg-center bg-no-repeat bg-fixed overflow-x-hidden"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+        }}
+      >
+        <Hero />
+        <VenueDetails />
+        <Gallery />
+        <Schedule />
+        <RSVPSection />
+      </main>
     </>
   );
 }

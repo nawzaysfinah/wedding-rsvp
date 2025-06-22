@@ -11,6 +11,10 @@ export default function Gallery() {
 
   useEffect(() => {
     const container = scrollRef.current;
+    if (container) {
+      container.style.scrollbarWidth = "none";
+      container.style.msOverflowStyle = "none";
+    }
     let scrollAmount = 0;
 
     const scroll = () => {
@@ -32,21 +36,31 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden py-8">
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-scroll scrollbar-hide"
-        style={{ scrollBehavior: "auto", whiteSpace: "nowrap" }}
-      >
-        {[...images, ...images].map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            alt={`Photo ${index + 1}`}
-            className="w-[400px] h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
-          />
-        ))}
+    <section className="h-screen w-full">
+      <div className="w-full overflow-hidden py-8 rounded-[20px]">
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-scroll scrollbar-hide"
+          style={{
+            scrollBehavior: "auto",
+            whiteSpace: "nowrap",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            overflow: "scroll",
+            opacity: "1",
+            scrollbarColor: "transparent transparent",
+          }}
+        >
+          {[...images, ...images].map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt={`Photo ${index + 1}`}
+              className="w-[400px] h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
