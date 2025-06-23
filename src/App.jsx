@@ -7,11 +7,15 @@ import Schedule from "./components/Schedule";
 import GoogleMap from "./components/GoogleMap";
 import HeartCursor from "./components/heart-cursor";
 import SpotifyPlayer from "./components/SpotifyPlayer";
+import HeartBurst from "./components/HeartBurst";
+
+// Inside your App component JSX
 
 function App() {
   return (
     <div className="fixed top-0 left-0 w-full h-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden">
       <HeartCursor />
+      <HeartBurst />;
       <main className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory h-screen overflow-y-scroll">
         {/* Spotify Player Responsive Positioning */}
         <div className="z-50 w-[300px] max-w-[90%] fixed bottom-[20px] left-1/2 -translate-x-1/2">
