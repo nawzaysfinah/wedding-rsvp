@@ -1,6 +1,7 @@
 import React from "react";
-import cloudBackground from "../assets/cloud-background.png";
 import BouncingCloud from "./BouncingCloud";
+import googleIcon from "../assets/googlemaps.png";
+import wazeIcon from "../assets/waze.png";
 
 const GoogleMap = () => {
   return (
@@ -11,21 +12,37 @@ const GoogleMap = () => {
       <div className="w-[80%] max-w-[900px] min-h-[600px] shadow-lg rounded-[20px] overflow-hidden flex flex-col bg-white/90 relative z-10">
         <div className="bg-white bg-opacity-90 p-6 text-base md:text-lg w-full text-left">
           <h3 className="font-bold mb-2">🏎️ By Car:</h3>
-          <p>
-            <a
-              href="https://maps.app.goo.gl/pv1t6JwVjjQutB5X9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#0019b9 ] underline hover:opacity-80 transition-opacity duration-200"
-            >
-              <b>Learning Forest Public Carpark</b>
-            </a>
-            <br></br>
-            <i>Tyersall Ave</i>
-          </p>
-          <p className="italic mb-4">
-            Note: We recommend to carpool due to limited parking space
-          </p>
+          <div className="text-lg text-yellow-300 mb-4">
+            <span className="block text-sm text-gray-600">
+              Learning Forest Public Carpark<br></br> Tyersall Avenue
+            </span>
+            <div className="flex gap-6 items-center flex-wrap justify-end">
+              <img
+                src={googleIcon}
+                alt="Google Maps"
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/maps/dir/?api=1&destination=Learning+Forest+Public+Carpark%2C+Tyersall+Ave",
+                    "_blank"
+                  )
+                }
+                className="max-w-[32px] max-h-[32px] cursor-pointer hover:scale-110 transition-transform duration-300"
+              />
+              <img
+                src={wazeIcon}
+                alt="Waze"
+                onClick={() =>
+                  window.open(
+                    "https://www.waze.com/ul?ll=1.305016,103.817808&navigate=yes",
+                    "_blank"
+                  )
+                }
+                className="max-w-[32px] max-h-[32px] cursor-pointer hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+
+            <p>🚗 Parking’s limited — carpool if you can! 😊</p>
+          </div>
           <br></br>
 
           <h3 className="font-bold mb-2">🚕 By Taxi: (Recommended) 💡</h3>

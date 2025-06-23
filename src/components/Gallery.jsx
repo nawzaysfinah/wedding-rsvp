@@ -32,33 +32,37 @@ export default function Gallery() {
 
     const interval = setInterval(scroll, 20); // adjust speed here
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (
-    <section className="min-h-screen md:h-screen w-full flex items-start pt-[50px]">
-      <div className="w-[95%] sm:w-[90%] mx-auto overflow-hidden py-4 sm:py-8 rounded-[20px]">
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-scroll scrollbar-hide"
-          style={{
-            scrollBehavior: "auto",
-            whiteSpace: "nowrap",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            overflow: "scroll",
-            opacity: "1",
-            scrollbarColor: "transparent transparent",
-          }}
-        >
-          {[...images, ...images].map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`Photo ${index + 1}`}
-              className="w-[300px] h-[450px] sm:w-[400px] sm:h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
-            />
-          ))}
+    <section className="min-h-screen md:h-screen w-full pt-[50px]">
+      <div className="w-full flex flex-col items-center">
+        <div className="w-[95%] sm:w-[90%] mx-auto overflow-hidden py-4 sm:py-8 rounded-[20px]">
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-scroll scrollbar-hide"
+            style={{
+              scrollBehavior: "auto",
+              whiteSpace: "nowrap",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              overflow: "scroll",
+              opacity: "1",
+              scrollbarColor: "transparent transparent",
+            }}
+          >
+            {[...images, ...images].map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`Photo ${index + 1}`}
+                className="w-[300px] h-[450px] sm:w-[400px] sm:h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
