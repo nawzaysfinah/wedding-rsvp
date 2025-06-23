@@ -14,10 +14,10 @@ function App() {
       <HeartCursor />
       <main className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory h-screen overflow-y-scroll">
         {/* Spotify Player Fixed Top Left with 20px margin */}
-        <div className="fixed top-[20px] left-[20px] w-[300px] max-w-[90%] z-50">
+        <div className="fixed bottom-[20px] right-[20px] w-[300px] max-w-[90%] z-50">
           <iframe
             style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/playlist/6MYoV7Pes2uOg7GoIIgTLY?utm_source=generator&theme=0"
+            src="https://open.spotify.com/embed/playlist/6MYoV7Pes2uOg7GoIIgTLY?utm_source=generator"
             width="100%"
             height="80"
             frameBorder="0"
