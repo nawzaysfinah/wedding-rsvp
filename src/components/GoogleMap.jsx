@@ -4,7 +4,7 @@ import BouncingCloud from "./BouncingCloud";
 
 const GoogleMap = () => {
   return (
-    <div className="w-full min-h-screen flex justify-center items-center px-4 text-[#FFC300] -mt-20 md:-mt-32 overflow-hidden relative">
+    <div className="w-full min-h-screen flex justify-center items-center px-4 text-[#0019b7] -mt-20 md:-mt-32 overflow-hidden relative">
       <BouncingCloud />
 
       {/* Foreground Content */}
@@ -16,7 +16,7 @@ const GoogleMap = () => {
               href="https://maps.app.goo.gl/pv1t6JwVjjQutB5X9"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#FFC300] underline hover:opacity-80 transition-opacity duration-200"
+              className="text-[#0019b9 ] underline hover:opacity-80 transition-opacity duration-200"
             >
               <b>Learning Forest Public Carpark</b>
             </a>

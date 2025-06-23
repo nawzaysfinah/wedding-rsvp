@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -58,6 +61,7 @@ body {
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: top center;
+  font-family: "Michroma", sans-serif;
 }
 
 @media screen and (max-width: 768px) {
@@ -68,13 +72,13 @@ body {
 }
 
 /* Font overrides */
-body {
-  font-family: "Fredoka", sans-serif;
-}
-
 h1,
 h2,
 h3,
 h4 {
-  font-family: "STIX Two Text", serif;
+  font-family: "Henny Penny", cursive;
+}
+
+p {
+  font-family: "Michroma";
 }

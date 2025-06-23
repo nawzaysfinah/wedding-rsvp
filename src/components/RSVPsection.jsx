@@ -14,7 +14,7 @@ function RSVPSection() {
   return (
     <section
       id="rsvp"
-      className="h-screen w-full px-4 flex items-center justify-center text-[#FFC300]"
+      className="h-screen w-full px-4 flex items-center justify-center text-[#ff8033]"
     >
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-4">RSVP</h1>
@@ -24,18 +24,18 @@ function RSVPSection() {
           <br></br>
         </p>
 
-        <div className="flex justify-center items-center gap-12 mb-8">
+        <div className="flex justify-around">
           <button
             onClick={() => setSelectedForm("lunch")}
-            className="px-6 py-3 text-lg font-semibold bg-[#87CEEB] rounded-full shadow-md hover:bg-[#e6ddd3] transition-colors duration-300"
+            className="px-6 py-3 bg-[#C70039] rounded-full shadow-md hover:bg-[#FFC300]"
           >
-            🥢 Lunch (Family)
+            LUNCH
           </button>
           <button
             onClick={() => setSelectedForm("dinner")}
-            className="px-6 py-3 text-lg font-semibold bg-[#87CEEB] rounded-full shadow-md hover:bg-[#e6ddd3] transition-colors duration-300"
+            className="px-6 py-3 bg-[#C70039] rounded-full shadow-md hover:bg-[#1b4f72]"
           >
-            🍽️ Dinner (Friends)
+            DINNER
           </button>
         </div>
         <br></br>
