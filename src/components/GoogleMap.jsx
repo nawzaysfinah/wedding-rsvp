@@ -1,15 +1,11 @@
 import React from "react";
 import cloudBackground from "../assets/cloud-background.png";
+import BouncingCloud from "./BouncingCloud";
 
 const GoogleMap = () => {
   return (
     <div className="w-full min-h-screen flex justify-center items-center px-4 text-[#FFC300] -mt-20 md:-mt-32 overflow-hidden relative">
-      {/* Background Image */}
-      <img
-        src={cloudBackground}
-        alt="Cloud Background"
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-100 z-0 brightness-110 contrast-110"
-      />
+      <BouncingCloud />
 
       {/* Foreground Content */}
       <div className="w-[80%] max-w-[900px] min-h-[600px] shadow-lg rounded-[20px] overflow-hidden flex flex-col bg-white/90 relative z-10">

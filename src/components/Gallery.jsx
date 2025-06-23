@@ -36,8 +36,8 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section className="h-screen w-full flex items-start pt-[50px]">
-      <div className="w-[90%] mx-auto overflow-hidden py-8 rounded-[20px]">
+    <section className="min-h-screen md:h-screen w-full flex items-start pt-[50px]">
+      <div className="w-[95%] sm:w-[90%] mx-auto overflow-hidden py-4 sm:py-8 rounded-[20px]">
         <div
           ref={scrollRef}
           className="flex overflow-x-scroll scrollbar-hide"
@@ -56,7 +56,7 @@ export default function Gallery() {
               key={index}
               src={src}
               alt={`Photo ${index + 1}`}
-              className="w-[400px] h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
+              className="w-[300px] h-[450px] sm:w-[400px] sm:h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
             />
           ))}
         </div>

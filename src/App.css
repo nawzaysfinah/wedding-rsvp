@@ -54,8 +54,15 @@ body {
 }
 
 body {
-  background-image: url("/src/assets/gallery/photo1.jpeg");
-  background-size: cover;
+  background-image: url("/src/assets/gallery/PreWed_RollingHills.png");
+  background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: top center;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-size: 400% auto;
+    background-position: center top;
+  }
 }
