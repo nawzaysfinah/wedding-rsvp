@@ -1,7 +1,7 @@
 import "./App.css";
 import Hero from "./components/Hero";
 import RSVPSection from "./components/RSVPsection";
-import Gallery from "./components/gallery";
+import Gallery from "./components/Gallery";
 import VenueDetails from "./components/VenueDetails";
 import Schedule from "./components/Schedule";
 import GoogleMap from "./components/GoogleMap";
