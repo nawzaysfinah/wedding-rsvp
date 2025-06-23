@@ -2,16 +2,34 @@ import React, { useRef, useEffect, useState } from "react";
 import smiley from "../assets/smiley.png";
 
 const BouncingBall = () => {
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
   const ballRef = useRef(null);
   const [position, setPosition] = useState({ x: 100, y: 0 });
   const [velocity, setVelocity] = useState({ x: 0.5, y: 0 });
-  const gravity = 0.03;
+  const gravity = isMobile ? 0.015 : 0.03;
   const damping = 0.7;
   const ballSize = 100;
 
   useEffect(() => {
     let animationFrameId;
     let mouse = { x: 0, y: 0 };
+    let touchStart = { x: 0, y: 0 };
+
+    const handleTouchStart = (e) => {
+      const touch = e.touches[0];
+      touchStart = { x: touch.clientX, y: touch.clientY };
+    };
+
+    const handleTouchMove = (e) => {
+      const touch = e.touches[0];
+      const dx = touch.clientX - touchStart.x;
+      const dy = touch.clientY - touchStart.y;
+      setVelocity((prevVel) => ({
+        x: prevVel.x + dx * (isMobile ? 0.02 : 0.05),
+        y: prevVel.y + dy * (isMobile ? 0.02 : 0.05),
+      }));
+      touchStart = { x: touch.clientX, y: touch.clientY };
+    };
 
     const handleMouseMove = (e) => {
       mouse.x = e.clientX;
@@ -28,13 +46,43 @@ const BouncingBall = () => {
         // Repel from mouse
         const dx = newX - mouse.x;
         const dy = newY - mouse.y;
+        const repulsionRadius = isMobile ? 70 : 100;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const repulsionRadius = 100;
 
         if (distance < repulsionRadius) {
           const force = (repulsionRadius - distance) / repulsionRadius;
           newVx += (dx / distance) * force * 5;
           newVy += (dy / distance) * force * 5;
+        }
+
+        // Repel from cloud wrapper (if exists)
+        const cloudEl = document.getElementById("bouncing-cloud-wrapper");
+        if (cloudEl) {
+          const cloudRect = cloudEl.getBoundingClientRect();
+          const ballRect = {
+            left: newX,
+            right: newX + ballSize,
+            top: newY,
+            bottom: newY + ballSize,
+          };
+
+          const intersects =
+            ballRect.right > cloudRect.left &&
+            ballRect.left < cloudRect.right &&
+            ballRect.bottom > cloudRect.top &&
+            ballRect.top < cloudRect.bottom;
+
+          if (intersects) {
+            const cx = cloudRect.left + cloudRect.width / 2;
+            const cy = cloudRect.top + cloudRect.height / 2;
+            const dxCloud = newX - cx;
+            const dyCloud = newY - cy;
+            const distCloud =
+              Math.sqrt(dxCloud * dxCloud + dyCloud * dyCloud) || 1;
+            const forceCloud = 1.5;
+            newVx += (dxCloud / distCloud) * forceCloud;
+            newVy += (dyCloud / distCloud) * forceCloud;
+          }
         }
 
         // Bounds
@@ -58,10 +106,14 @@ const BouncingBall = () => {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
     animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, [velocity]);
