@@ -11,7 +11,11 @@ const GoogleMap = () => {
       <div className="w-[80%] max-w-[900px] min-h-[600px] shadow-lg rounded-[20px] overflow-hidden flex flex-col bg-white/90 relative z-10">
         <div className="bg-white bg-opacity-90 p-6 text-base md:text-lg w-full text-left">
           <h3 className="font-bold mb-2">🏎️ By Car:</h3>
-          <p>Learning Forest Public Carpark, Tyersall Ave</p>
+          <p>
+            <b>Learning Forest Public Carpark</b>
+            <br></br>
+            <i>Tyersall Ave</i>
+          </p>
           <p className="italic mb-4">
             Note: We recommend to carpool due to limited parking space
           </p>
@@ -19,8 +23,8 @@ const GoogleMap = () => {
 
           <h3 className="font-bold mb-2">🚕 By Taxi: (Recommended) 💡</h3>
           <p>
-            Set Destination <b>“Learning Forest”</b> or <b>“The Halia”</b> drop
-            off
+            Set Destination <b>“Learning Forest”</b>
+            <br></br> or <b>“The Halia”</b> drop off
           </p>
           <br></br>
         </div>
