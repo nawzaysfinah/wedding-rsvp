@@ -1,21 +1,15 @@
 import "./App.css";
 import Hero from "./components/Hero";
-import RSVPSection from "./components/RSVPSection";
+import RSVPSection from "./components/RSVPsection";
 import Gallery from "./components/gallery";
 import VenueDetails from "./components/VenueDetails";
-import backgroundImage from "./assets/gallery/photo1.jpeg";
 import Schedule from "./components/Schedule";
 import GoogleMap from "./components/GoogleMap";
 
 function App() {
   return (
-    <div
-      className="min-h-screen w-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-x-hidden"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
-    >
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
+    <div className="fixed top-0 left-0 w-full h-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden">
+      <main className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory h-screen overflow-y-scroll">
         <section className="snap-start h-screen">
           <Hero />
         </section>
