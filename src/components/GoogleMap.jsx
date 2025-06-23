@@ -12,7 +12,14 @@ const GoogleMap = () => {
         <div className="bg-white bg-opacity-90 p-6 text-base md:text-lg w-full text-left">
           <h3 className="font-bold mb-2">🏎️ By Car:</h3>
           <p>
-            <b>Learning Forest Public Carpark</b>
+            <a
+              href="https://maps.app.goo.gl/pv1t6JwVjjQutB5X9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FFC300] underline hover:opacity-80 transition-opacity duration-200"
+            >
+              <b>Learning Forest Public Carpark</b>
+            </a>
             <br></br>
             <i>Tyersall Ave</i>
           </p>
@@ -23,8 +30,15 @@ const GoogleMap = () => {
 
           <h3 className="font-bold mb-2">🚕 By Taxi: (Recommended) 💡</h3>
           <p>
-            Set Destination <b>“Learning Forest”</b>
-            <br></br> or <b>“The Halia”</b> drop off
+            Set Destination{" "}
+            <span className="hover:underline hover:text-[#60A5FA] transition-colors duration-200">
+              “Learning Forest”
+            </span>
+            <br></br> or{" "}
+            <span className="hover:underline hover:text-[#60A5FA] transition-colors duration-200">
+              “The Halia”
+            </span>{" "}
+            drop off
           </p>
           <br></br>
         </div>

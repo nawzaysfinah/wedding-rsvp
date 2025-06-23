@@ -9,7 +9,7 @@ const Schedule = () => {
       <div className="w-full">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            📅 25 October 2025
+            📅 25<sup>th</sup> October 2025
           </h2>
           <br></br>
 
