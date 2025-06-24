@@ -124,7 +124,7 @@ const BouncingBall = () => {
       window.removeEventListener("touchmove", handleTouchMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [velocity]);
+  }, [velocity, isMobile]);
 
   return (
     <img

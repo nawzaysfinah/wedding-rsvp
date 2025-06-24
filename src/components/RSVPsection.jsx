@@ -7,7 +7,7 @@ function RSVPSection() {
     lunch:
       "https://docs.google.com/forms/d/e/1FAIpQLSeXBQ7yRnWQi1M05yvE1Laa9BvpqiXy2I1tEkJUnfeMLfADDA/viewform?embedded=true",
     dinner:
-      "https://docs.google.com/forms/d/e/1FAIpQLSci3UH_WVruaSzOGVHpiBZ56WiAUEDv9ZkVt_fhd8B04GKsGQ/viewform?embedded=true",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdYXxgKdSpGdb0xNk-tNW2E6GIUCRuqBmLCLuTheFHSTzxT5A/viewform?embedded=true",
     both: "", // placeholder – to be filled later
   };
 
