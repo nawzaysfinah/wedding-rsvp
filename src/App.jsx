@@ -40,13 +40,13 @@ function App() {
           <Gallery />
         </section>
         <section className="snap-start h-screen">
+          <RSVPSection />
+        </section>
+        <section className="snap-start h-screen">
           <GoogleMap />
         </section>
         <section className="snap-start h-screen">
           <Schedule />
-        </section>
-        <section className="snap-start h-screen">
-          <RSVPSection />
         </section>
       </main>
     </div>

@@ -14,7 +14,7 @@ function RSVPSection() {
   return (
     <section
       id="rsvp"
-      className="h-screen w-full px-4 flex items-center justify-center text-[#ff8033]"
+      className="h-screen w-full px-4 flex items-center justify-center text-black"
     >
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-4">RSVP</h1>
@@ -22,7 +22,11 @@ function RSVPSection() {
           Please select the group you were invited to.<br></br>
           If you’re unsure, refer to your invitation.<br></br>
           <br></br>
+          <span className="block text-center font-medium mb-4">
+            Please RSVP by 31st August 2025 to help us plan better.
+          </span>
         </p>
+        <br></br>
 
         <div className="flex justify-around">
           <button
@@ -41,18 +45,25 @@ function RSVPSection() {
         <br></br>
 
         {selectedForm && formLinks[selectedForm] && (
-          <div className="w-[80%] h-[700px] border rounded overflow-hidden mx-auto">
-            <iframe
-              src={formLinks[selectedForm]}
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              title="RSVP Form"
-              style={{ backgroundColor: "transparent" }}
-            >
-              Loading…
-            </iframe>
-          </div>
+          <>
+            {selectedForm === "dinner" && (
+              <p className="text-center mb-4 font-medium">
+                We’re so excited to celebrate with you at our dinner ceremony!
+              </p>
+            )}
+            <div className="w-[80%] h-[700px] border rounded overflow-hidden mx-auto">
+              <iframe
+                src={formLinks[selectedForm]}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="RSVP Form"
+                style={{ backgroundColor: "transparent" }}
+              >
+                Loading…
+              </iframe>
+            </div>
+          </>
         )}
       </div>
     </section>

@@ -18,16 +18,11 @@ const VenueDetails = () => {
             <br />
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl shadow-xl px-8 py-6 max-w-xl">
               <h3 className="text-3xl font-bold mb-2">Burkill Hall</h3>
-              <p className="text-lg font-medium mb-2">
-                🀣 National Orchid Garden 🀣
+              <p className="text-lg font-bold mb-2">National Orchid Garden</p>
+              <p className="text-base font-normal mb-2">
+                🌻 Singapore Botanic Garden 🌷
               </p>
-              <p className="text-lg font-medium mb-2">
-                🌻 Singapore Botanic Gardens 🌷
-              </p>
-              <br></br>
-              <p className="text-lg font-semibold">
-                Attire: Linen, Florals & Comfort
-              </p>
+              <p className="text-base font-normal mb-2">1 Cluny Road, 257683</p>
             </div>
           </div>
         </section>

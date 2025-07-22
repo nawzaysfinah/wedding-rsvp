@@ -1,10 +1,25 @@
 import { useRef, useEffect } from "react";
-import photo1 from "../assets/gallery/photo1.jpeg";
-import photo2 from "../assets/gallery/photo2.jpeg";
-import photo3 from "../assets/gallery/photo3.jpeg";
-import photo4 from "../assets/gallery/photo4.jpeg";
+import photo1 from "../assets/gallery/photo1.JPG";
+import photo2 from "../assets/gallery/photo2.JPG";
+import photo3 from "../assets/gallery/photo3.JPG";
+import photo4 from "../assets/gallery/photo4.JPG";
+import photo5 from "../assets/gallery/photo5.JPG";
+import photo7 from "../assets/gallery/photo7.JPG";
+import photo8 from "../assets/gallery/photo8.JPG";
+import photo9 from "../assets/gallery/photo9.JPG";
+import photo10 from "../assets/gallery/photo10.JPG";
 
-const images = [photo1, photo2, photo3, photo4];
+const images = [
+  photo1,
+  photo2,
+  photo3,
+  photo4,
+  photo5,
+  photo7,
+  photo8,
+  photo9,
+  photo10,
+];
 
 export default function Gallery() {
   const scrollRef = useRef(null);
