@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;700&family=Lora:wght@400;700&display=swap");
 
 #root {
   width: 100%;
@@ -61,7 +60,7 @@ body {
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: top center;
-  font-family: "Michroma", sans-serif;
+  font-family: "Lora", sans-serif;
 }
 
 @media screen and (max-width: 768px) {
@@ -76,13 +75,13 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Henny Penny", cursive;
+  font-family: "Cormorant SC", serif;
+  font-weight: 700;
 }
-
-p,
+/* p,
 span {
   font-family: "Michroma";
-}
+} */
 
 @keyframes heart-burst {
   0% {
