@@ -51,7 +51,8 @@ function RSVPSection() {
                 We’re so excited to celebrate with you at our dinner ceremony!
               </p>
             )}
-            <div className="w-[80%] h-[700px] border rounded overflow-hidden mx-auto">
+            <div className="max-w-[90%] mx-auto overflow-hidden rounded-lg shadow-lg">
+              {" "}
               <iframe
                 src={formLinks[selectedForm]}
                 width="100%"

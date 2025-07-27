@@ -1,13 +1,10 @@
 import React from "react";
-import BouncingCloud from "./BouncingCloud";
 import googleIcon from "../assets/googlemaps.png";
 import wazeIcon from "../assets/waze.png";
 
 const GoogleMap = () => {
   return (
-    <div className="w-full min-h-screen flex justify-center items-center px-4 text-[#0019b7] -mt-20 md:-mt-32 overflow-hidden relative">
-      <BouncingCloud />
-
+    <div className="w-full min-h-screen flex justify-center items-center px-4 text-[#4a4a4a] -mt-20 md:-mt-32 overflow-hidden relative">
       {/* Foreground Content */}
       <div className="w-[80%] max-w-[900px] min-h-[600px] shadow-lg rounded-[20px] overflow-hidden flex flex-col bg-white/90 relative z-10">
         <div className="bg-white bg-opacity-90 p-6 text-base md:text-lg w-full text-left">

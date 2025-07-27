@@ -1,4 +1,5 @@
 import React from "react";
+import BouncingCloud from "./BouncingCloud";
 
 const VenueDetails = () => {
   return (
@@ -25,6 +26,7 @@ const VenueDetails = () => {
               <p className="text-base font-normal mb-2">1 Cluny Road, 257683</p>
             </div>
           </div>
+          <BouncingCloud />
         </section>
       </div>
     </div>

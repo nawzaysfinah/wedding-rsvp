@@ -12,8 +12,8 @@ const BouncingCloud = () => {
   );
   const directions = useRef(
     Array.from({ length: NUM_CLOUDS }, () => ({
-      dx: 1.5 + Math.random(),
-      dy: 1.5 + Math.random(),
+      dx: 0.5 + Math.random() * 0.5,
+      dy: 0.5 + Math.random() * 0.5,
     }))
   );
   const containerRef = useRef(null);
@@ -38,9 +38,9 @@ const BouncingCloud = () => {
           y += dy;
 
           if (x + imgWidth >= offsetWidth || x <= 0)
-            directions.current[index].dx *= -1;
+            directions.current[index].dx *= -1.2;
           if (y + imgHeight >= offsetHeight || y <= 0)
-            directions.current[index].dy *= -1;
+            directions.current[index].dy *= -1.2;
 
           return { x, y };
         })
@@ -68,8 +68,8 @@ const BouncingCloud = () => {
             position: "absolute",
             left: position.x,
             top: position.y,
-            width: "800px",
-            height: "480px",
+            width: "400px",
+            height: "240px",
             opacity: 1.0,
             pointerEvents: "none",
           }}

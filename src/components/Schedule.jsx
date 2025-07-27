@@ -4,7 +4,6 @@ import BouncingBall from "./BouncingBall";
 const Schedule = () => {
   return (
     <>
-      <BouncingBall />
       <section
         id="schedule"
         className="h-screen w-full px-4 text-[#4a4a4a] flex items-center justify-center pt-12"
