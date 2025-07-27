@@ -4,10 +4,12 @@ import photo2 from "../assets/gallery/photo2.JPG";
 import photo3 from "../assets/gallery/photo3.JPG";
 import photo4 from "../assets/gallery/photo4.JPG";
 import photo5 from "../assets/gallery/photo5.JPG";
+import photo6 from "../assets/gallery/photo6.JPG"; // Assuming photo6 is used in the original code
 import photo7 from "../assets/gallery/photo7.JPG";
 import photo8 from "../assets/gallery/photo8.JPG";
 import photo9 from "../assets/gallery/photo9.JPG";
 import photo10 from "../assets/gallery/photo10.JPG";
+import photo11 from "../assets/gallery/photo11.JPG"; // Assuming photo11 is used in the original code
 
 const images = [
   photo1,
@@ -15,10 +17,12 @@ const images = [
   photo3,
   photo4,
   photo5,
+  photo6,
   photo7,
   photo8,
   photo9,
   photo10,
+  photo11,
 ];
 
 export default function Gallery() {
