@@ -7,4 +7,4 @@ for file in *.JPG; do
     convert "$file" "${filename}.webp"
     echo "Converted: $file → ${filename}.webp"
   fi
-done
+doneclear

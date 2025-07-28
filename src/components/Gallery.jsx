@@ -1,15 +1,15 @@
 import { useRef, useEffect } from "react";
-import photo1 from "../assets/gallery/photo1.JPG";
-import photo2 from "../assets/gallery/photo2.JPG";
-import photo3 from "../assets/gallery/photo3.JPG";
-import photo4 from "../assets/gallery/photo4.JPG";
-import photo5 from "../assets/gallery/photo5.JPG";
-import photo6 from "../assets/gallery/photo6.JPG"; // Assuming photo6 is used in the original code
-import photo7 from "../assets/gallery/photo7.JPG";
-import photo8 from "../assets/gallery/photo8.JPG";
-import photo9 from "../assets/gallery/photo9.JPG";
-import photo10 from "../assets/gallery/photo10.JPG";
-import photo11 from "../assets/gallery/photo11.JPG"; // Assuming photo11 is used in the original code
+import photo1 from "../assets/gallery/photo1.webp";
+import photo2 from "../assets/gallery/photo2.webp";
+import photo3 from "../assets/gallery/photo3.webp";
+import photo4 from "../assets/gallery/photo4.webp";
+import photo5 from "../assets/gallery/photo5.webp";
+import photo6 from "../assets/gallery/photo6.webp";
+import photo7 from "../assets/gallery/photo7.webp";
+import photo8 from "../assets/gallery/photo8.webp";
+import photo9 from "../assets/gallery/photo9.webp";
+import photo10 from "../assets/gallery/photo10.webp";
+import photo11 from "../assets/gallery/photo11.webp"; // Assuming photo11 is used in the original code
 
 const images = [
   photo1,

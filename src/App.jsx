@@ -1,17 +1,17 @@
+import React, { Suspense, lazy } from "react";
 import "./App.css";
-import Hero from "./components/Hero";
-import RSVPSection from "./components/RSVPsection";
-import Gallery from "./components/Gallery";
-import VenueDetails from "./components/VenueDetails";
-import Schedule from "./components/Schedule";
-import GoogleMap from "./components/GoogleMap";
-import HeartCursor from "./components/heart-cursor";
-import SpotifyPlayer from "./components/SpotifyPlayer";
-import HeartBurst from "./components/HeartBurst";
-import BouncingCloud from "./components/BouncingCloud";
-import GoogleForm from "./components/Googleform";
 
-// Inside your App component JSX
+const Hero = lazy(() => import("./components/Hero"));
+const RSVPSection = lazy(() => import("./components/RSVPsection"));
+const Gallery = lazy(() => import("./components/Gallery"));
+const VenueDetails = lazy(() => import("./components/VenueDetails"));
+const Schedule = lazy(() => import("./components/Schedule"));
+const GoogleMap = lazy(() => import("./components/GoogleMap"));
+const GoogleForm = lazy(() => import("./components/Googleform"));
+const HeartCursor = lazy(() => import("./components/heart-cursor"));
+const SpotifyPlayer = lazy(() => import("./components/SpotifyPlayer"));
+const HeartBurst = lazy(() => import("./components/HeartBurst"));
+const BouncingCloud = lazy(() => import("./components/BouncingCloud"));
 
 function App() {
   return (
@@ -19,42 +19,46 @@ function App() {
       <HeartCursor />
       <HeartBurst />
       <BouncingCloud />
-      <main className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory h-screen overflow-y-scroll">
-        {/* Spotify Player Responsive Positioning */}
-        <div className="z-50 w-[300px] max-w-[90%] fixed bottom-[20px] left-1/2 -translate-x-1/2">
-          <iframe
-            style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/playlist/6MYoV7Pes2uOg7GoIIgTLY?utm_source=generator"
-            width="100%"
-            height="80"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
+      <Suspense
+        fallback={<div className="text-white text-center mt-8">Loading...</div>}
+      >
+        <main className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory">
+          {/* Spotify Player Responsive Positioning */}
+          <div className="z-50 w-[300px] max-w-[90%] fixed bottom-[20px] left-1/2 -translate-x-1/2">
+            <iframe
+              style={{ borderRadius: "12px" }}
+              src="https://open.spotify.com/embed/playlist/6MYoV7Pes2uOg7GoIIgTLY?utm_source=generator"
+              width="100%"
+              height="80"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
 
-        <section className="snap-start h-screen">
-          <Hero />
-        </section>
-        <section className="snap-start h-screen">
-          <VenueDetails />
-        </section>
-        <section className="snap-start h-screen">
-          <Gallery />
-        </section>
-        <section className="snap-start h-screen">
-          <RSVPSection />
-        </section>
-        <section className="snap-start h-screen">
-          <GoogleForm />
-        </section>
-        <section className="snap-start h-screen">
-          <GoogleMap />
-        </section>
-        <section className="snap-start h-screen">
-          <Schedule />
-        </section>
-      </main>
+          <section className="snap-start h-screen">
+            <Hero />
+          </section>
+          <section className="snap-start h-screen">
+            <VenueDetails />
+          </section>
+          <section className="snap-start h-screen">
+            <Gallery />
+          </section>
+          <section className="snap-start h-screen">
+            <RSVPSection />
+          </section>
+          <section className="snap-start h-screen">
+            <GoogleForm />
+          </section>
+          <section className="snap-start h-screen">
+            <GoogleMap />
+          </section>
+          <section className="snap-start h-screen">
+            <Schedule />
+          </section>
+        </main>
+      </Suspense>
     </div>
   );
 }
