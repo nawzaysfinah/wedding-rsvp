@@ -9,6 +9,7 @@ import HeartCursor from "./components/heart-cursor";
 import SpotifyPlayer from "./components/SpotifyPlayer";
 import HeartBurst from "./components/HeartBurst";
 import BouncingCloud from "./components/BouncingCloud";
+import GoogleForm from "./components/Googleform";
 
 // Inside your App component JSX
 
@@ -43,6 +44,9 @@ function App() {
         </section>
         <section className="snap-start h-screen">
           <RSVPSection />
+        </section>
+        <section className="snap-start h-screen">
+          <GoogleForm />
         </section>
         <section className="snap-start h-screen">
           <GoogleMap />

@@ -3,71 +3,33 @@ import { useState } from "react";
 function RSVPSection() {
   const [selectedForm, setSelectedForm] = useState(null);
 
-  const formLinks = {
-    lunch:
-      "https://docs.google.com/forms/d/e/1FAIpQLSeXBQ7yRnWQi1M05yvE1Laa9BvpqiXy2I1tEkJUnfeMLfADDA/viewform?embedded=true",
-    dinner:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdYXxgKdSpGdb0xNk-tNW2E6GIUCRuqBmLCLuTheFHSTzxT5A/viewform?embedded=true",
-    both: "", // placeholder – to be filled later
+  const handleClick = (type) => {
+    const formUrl =
+      type === "lunch"
+        ? "https://docs.google.com/forms/d/e/1FAIpQLSeXBQ7yRnWQi1M05yvE1Laa9BvpqiXy2I1tEkJUnfeMLfADDA/viewform?embedded=true"
+        : "https://docs.google.com/forms/d/e/1FAIpQLSdYXxgKdSpGdb0xNk-tNW2E6GIUCRuqBmLCLuTheFHSTzxT5A/viewform?embedded=true";
+    const encodedUrl = encodeURIComponent(formUrl);
+    window.location.href = `/googleform?url=${encodedUrl}`;
   };
 
   return (
-    <section
-      id="rsvp"
-      className="h-screen w-full px-4 flex items-center justify-center text-black"
-    >
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-4">RSVP</h1>
-        <p className="text-center mb-6">
-          Please select the group you were invited to.<br></br>
-          If you’re unsure, refer to your invitation.<br></br>
-          <br></br>
-          <span className="block text-center font-medium mb-4">
+    <>
+      <section
+        id="rsvp"
+        className="h-screen w-full px-4 flex items-center justify-center text-black"
+      >
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-3xl font-bold text-center mb-4">
+            <a href="#googleform" className="text-3xl font-bold text-center">
+              RSVP
+            </a>
+          </h1>
+          <p className="text-center mb-6">
             Please RSVP by 31st August 2025 to help us plan better.
-          </span>
-        </p>
-        <br></br>
-
-        <div className="flex justify-around">
-          <button
-            onClick={() => setSelectedForm("lunch")}
-            className="px-6 py-3 bg-[#C70039] rounded-full shadow-md hover:bg-[#FFC300]"
-          >
-            LUNCH
-          </button>
-          <button
-            onClick={() => setSelectedForm("dinner")}
-            className="px-6 py-3 bg-[#C70039] rounded-full shadow-md hover:bg-[#1b4f72]"
-          >
-            DINNER
-          </button>
+          </p>
         </div>
-        <br></br>
-
-        {selectedForm && formLinks[selectedForm] && (
-          <>
-            {selectedForm === "dinner" && (
-              <p className="text-center mb-4 font-medium">
-                We’re so excited to celebrate with you at our dinner ceremony!
-              </p>
-            )}
-            <div className="max-w-[90%] mx-auto overflow-hidden rounded-lg shadow-lg">
-              {" "}
-              <iframe
-                src={formLinks[selectedForm]}
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                title="RSVP Form"
-                style={{ backgroundColor: "transparent" }}
-              >
-                Loading…
-              </iframe>
-            </div>
-          </>
-        )}
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
