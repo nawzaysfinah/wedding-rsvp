@@ -1,4 +1,6 @@
 import scrollbarHide from "tailwind-scrollbar-hide";
+import compression from 'vite-plugin-compression';
+
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -16,5 +18,5 @@ export default {
       },
     },
   },
-  plugins: [scrollbarHide],
+  plugins: [scrollbarHide],[compression()],
 };

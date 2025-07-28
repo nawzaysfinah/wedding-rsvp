@@ -16,7 +16,6 @@ const BouncingCloud = lazy(() => import("./components/BouncingCloud"));
 function App() {
   return (
     <div className="fixed top-0 left-0 w-full h-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden">
-      <HeartCursor />
       <HeartBurst />
       <BouncingCloud />
       <Suspense

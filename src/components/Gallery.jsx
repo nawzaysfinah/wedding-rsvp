@@ -78,6 +78,7 @@ export default function Gallery() {
                 key={index}
                 src={src}
                 alt={`Photo ${index + 1}`}
+                loading="lazy"
                 className="w-[300px] h-[450px] sm:w-[400px] sm:h-[600px] object-cover rounded-xl shadow-lg mx-2 flex-shrink-0"
               />
             ))}

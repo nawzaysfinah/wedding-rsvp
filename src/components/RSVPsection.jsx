@@ -20,11 +20,14 @@ function RSVPSection() {
       >
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold text-center mb-4">
-            <a href="#googleform" className="text-3xl font-bold text-center">
+            <a
+              href="#googleform"
+              className="text-3xl font-bold text-center text-[#4a4a4a]"
+            >
               RSVP
             </a>
           </h1>
-          <p className="text-center mb-6">
+          <p className="text-center mb-6 text-[#4a4a4a]">
             Please RSVP by 31st August 2025 to help us plan better.
           </p>
         </div>
