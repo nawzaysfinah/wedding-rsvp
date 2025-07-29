@@ -42,6 +42,9 @@ const BouncingCloud = () => {
           if (y + imgHeight >= offsetHeight || y <= 0)
             directions.current[index].dy *= -1.2;
 
+          x = Math.max(0, Math.min(x, offsetWidth - imgWidth));
+          y = Math.max(0, Math.min(y, offsetHeight - imgHeight));
+
           return { x, y };
         })
       );
@@ -66,8 +69,8 @@ const BouncingCloud = () => {
           alt="Bouncing Cloud"
           style={{
             position: "absolute",
-            left: position.x,
-            top: position.y,
+            left: Number.isFinite(position.x) ? position.x : 0,
+            top: Number.isFinite(position.y) ? position.y : 0,
             width: "400px",
             height: "240px",
             opacity: 1.0,

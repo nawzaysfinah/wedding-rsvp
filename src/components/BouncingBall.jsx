@@ -5,7 +5,7 @@ const BouncingBall = () => {
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
   const ballRef = useRef(null);
   const [position, setPosition] = useState({ x: 100, y: 0 });
-  const [velocity, setVelocity] = useState({ x: 0.5, y: 0 });
+  const velocityRef = useRef({ x: 0.5, y: 0 });
   const gravity = isMobile ? 0.015 : 0.03;
   const damping = 0.7;
   const ballSize = 100;
@@ -24,10 +24,8 @@ const BouncingBall = () => {
       const touch = e.touches[0];
       const dx = touch.clientX - touchStart.x;
       const dy = touch.clientY - touchStart.y;
-      setVelocity((prevVel) => ({
-        x: prevVel.x + dx * (isMobile ? 0.02 : 0.05),
-        y: prevVel.y + dy * (isMobile ? 0.02 : 0.05),
-      }));
+      velocityRef.current.x += dx * (isMobile ? 0.02 : 0.05);
+      velocityRef.current.y += dy * (isMobile ? 0.02 : 0.05);
       touchStart = { x: touch.clientX, y: touch.clientY };
     };
 
@@ -38,10 +36,10 @@ const BouncingBall = () => {
 
     const animate = () => {
       setPosition((prev) => {
-        let newX = prev.x + velocity.x;
-        let newY = prev.y + velocity.y;
-        let newVx = velocity.x;
-        let newVy = velocity.y + gravity;
+        let { x: vx, y: vy } = velocityRef.current;
+        let newX = prev.x + vx;
+        let newY = prev.y + vy;
+        vy += gravity;
 
         // Repel from mouse
         const dx = newX - mouse.x;
@@ -51,8 +49,8 @@ const BouncingBall = () => {
 
         if (distance < repulsionRadius) {
           const force = (repulsionRadius - distance) / repulsionRadius;
-          newVx += (dx / distance) * force * 5;
-          newVy += (dy / distance) * force * 5;
+          vx += (dx / distance) * force * 5;
+          vy += (dy / distance) * force * 5;
         }
 
         // Repel from cloud wrapper (if exists)
@@ -80,8 +78,8 @@ const BouncingBall = () => {
             const distCloud =
               Math.sqrt(dxCloud * dxCloud + dyCloud * dyCloud) || 1;
             const forceCloud = 1.5;
-            newVx += (dxCloud / distCloud) * forceCloud;
-            newVy += (dyCloud / distCloud) * forceCloud;
+            vx += (dxCloud / distCloud) * forceCloud;
+            vy += (dyCloud / distCloud) * forceCloud;
           }
         }
 
@@ -90,15 +88,15 @@ const BouncingBall = () => {
         const windowHeight = window.innerHeight;
 
         if (newX <= 0 || newX + ballSize >= windowWidth) {
-          newVx *= -damping;
+          vx *= -damping;
           newX = Math.max(0, Math.min(newX, windowWidth - ballSize));
         }
         if (newY + ballSize >= windowHeight) {
-          newVy *= -damping;
+          vy *= -damping;
           newY = windowHeight - ballSize;
         }
 
-        setVelocity({ x: newVx, y: newVy });
+        velocityRef.current = { x: vx, y: vy };
         return { x: newX, y: newY };
       });
 

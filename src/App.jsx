@@ -1,5 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import "./App.css";
+import BouncingBall from "./components/BouncingBall";
+import BouncingCloud from "./components/BouncingCloud";
 
 const Hero = lazy(() => import("./components/Hero"));
 const RSVPSection = lazy(() => import("./components/RSVPsection"));
@@ -11,13 +13,13 @@ const GoogleForm = lazy(() => import("./components/Googleform"));
 const HeartCursor = lazy(() => import("./components/heart-cursor"));
 const SpotifyPlayer = lazy(() => import("./components/SpotifyPlayer"));
 const HeartBurst = lazy(() => import("./components/HeartBurst"));
-const BouncingCloud = lazy(() => import("./components/BouncingCloud"));
 
 function App() {
   return (
     <div className="fixed top-0 left-0 w-full h-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden">
       <HeartBurst />
       <BouncingCloud />
+      <BouncingBall />
       <Suspense
         fallback={<div className="text-white text-center mt-8">Loading...</div>}
       >
