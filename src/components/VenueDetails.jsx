@@ -7,7 +7,7 @@ const VenueDetails = () => {
       <div className="w-[85%]">
         <section
           id="venue"
-          className="h-screen w-full flex flex-col justify-center items-center text-center px-4 py-20 text-[#4a4a4a] "
+          className="h-screen w-full flex flex-col justify-center items-center text-center px-4 py-20 text-[#4a4a4a] -translate-y-[7vh] "
         >
           <div className="bg-white bg-opacity-100">
             <h1 className="text-4xl font-bold mb-6">You're Invited 💌</h1>
