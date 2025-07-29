@@ -11,9 +11,7 @@ const GoogleMap = () => {
           <h3 className="font-bold mb-2">🏎️ By Car:</h3>
           <div className="text-lg text-yellow-300 mb-4">
             <span className="block text-sm text-gray-600">
-              Learning Forest Public Carpark<br></br> Tyersall Avenue
-            </span>
-            <div className="flex gap-6 items-center flex-wrap justify-end">
+              Learning Forest Public Carpark<br></br> Tyersall Avenue{" "}
               <img
                 src={googleIcon}
                 alt="Google Maps"
@@ -36,9 +34,14 @@ const GoogleMap = () => {
                 }
                 className="max-w-[32px] max-h-[32px] cursor-pointer hover:scale-110 transition-transform duration-300"
               />
-            </div>
+            </span>
+            <div className="flex gap-6 items-center flex-wrap justify-end">
+              <br></br>
 
-            <p>🚗 Parking’s limited — carpool if you can! 😊</p>
+              <p>
+                Parking’s limited & not free <br></br>— carpool if you can!{" "}
+              </p>
+            </div>
           </div>
           <br></br>
 

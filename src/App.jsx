@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import "./App.css";
 import BouncingBall from "./components/BouncingBall";
 import BouncingCloud from "./components/BouncingCloud";
-
+import NOG from "./components/NOG";
 const Hero = lazy(() => import("./components/Hero"));
 const RSVPSection = lazy(() => import("./components/RSVPsection"));
 const Gallery = lazy(() => import("./components/Gallery"));
@@ -53,10 +53,13 @@ function App() {
             <GoogleForm />
           </section>
           <section className="snap-start h-screen">
+            <Schedule />
+          </section>
+          <section className="snap-start h-screen">
             <GoogleMap />
           </section>
           <section className="snap-start h-screen">
-            <Schedule />
+            <NOG />
           </section>
         </main>
       </Suspense>
