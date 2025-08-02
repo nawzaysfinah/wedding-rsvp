@@ -18,7 +18,9 @@ function App() {
   return (
     <div className="fixed top-0 left-0 w-full h-full m-0 p-0 bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden">
       <HeartBurst />
-      <AudioPlayer />
+      <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50">
+        <AudioPlayer />
+      </div>
       <BouncingCloud />
       <BouncingBall />
       <Suspense

@@ -1,33 +1,46 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 const AudioPlayer = () => {
   const audioRef = useRef(null);
   const [hasPlayed, setHasPlayed] = useState(false);
 
   const handlePlay = () => {
-    if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
+    if (audioRef.current && !hasPlayed) {
+      const audio = audioRef.current;
+      audio.currentTime = 93; // start at 1:33
+      audio.volume = 0;
+      audio.play().catch((error) => {
         console.error("Playback failed:", error);
       });
       setHasPlayed(true);
+
+      // Gradually increase volume over 5 seconds
+      let step = 0.02; // Volume step every 100ms
+      const interval = setInterval(() => {
+        if (audio.volume < 1) {
+          audio.volume = Math.min(audio.volume + step, 1);
+        } else {
+          clearInterval(interval);
+        }
+      }, 100);
     }
   };
 
+  useEffect(() => {
+    const triggerAudio = () => {
+      handlePlay();
+      document.body.removeEventListener("click", triggerAudio);
+    };
+
+    document.body.addEventListener("click", triggerAudio);
+    return () => document.body.removeEventListener("click", triggerAudio);
+  }, [hasPlayed]);
+
   return (
-    <div className="w-full flex flex-col items-center mt-6">
-      {!hasPlayed && (
-        <button
-          onClick={handlePlay}
-          className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
-        >
-          Play Music
-        </button>
-      )}
-      <audio ref={audioRef} loop preload="auto">
-        <source src="/music/itsalwaysyou.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+    <audio ref={audioRef} loop preload="auto">
+      <source src="/music/itsalwaysyou.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
   );
 };
 
