@@ -38,9 +38,9 @@ const BouncingCloud = () => {
           y += dy;
 
           if (x + imgWidth >= offsetWidth || x <= 0)
-            directions.current[index].dx *= -1.2;
+            directions.current[index].dx = -directions.current[index].dx;
           if (y + imgHeight >= offsetHeight || y <= 0)
-            directions.current[index].dy *= -1.2;
+            directions.current[index].dy = -directions.current[index].dy;
 
           x = Math.max(0, Math.min(x, offsetWidth - imgWidth));
           y = Math.max(0, Math.min(y, offsetHeight - imgHeight));
