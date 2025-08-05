@@ -8,11 +8,22 @@ function GoogleForm() {
       setFormUrl(
         "https://docs.google.com/forms/d/e/1FAIpQLSeXBQ7yRnWQi1M05yvE1Laa9BvpqiXy2I1tEkJUnfeMLfADDA/viewform?embedded=true"
       );
+      triggerICSDownload("/rsvp-lunch.ics");
     } else if (type === "dinner") {
       setFormUrl(
         "https://docs.google.com/forms/d/e/1FAIpQLSdYXxgKdSpGdb0xNk-tNW2E6GIUCRuqBmLCLuTheFHSTzxT5A/viewform?embedded=true"
       );
+      triggerICSDownload("/rsvp-dinner.ics");
     }
+  };
+
+  const triggerICSDownload = (filePath) => {
+    const link = document.createElement("a");
+    link.href = filePath;
+    link.download = filePath.split("/").pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -32,13 +43,13 @@ function GoogleForm() {
         <div className="flex justify-around">
           <button
             onClick={() => handleFormLoad("lunch")}
-            className="px-6 py-3 bg-[#C70039] rounded-full shadow-md hover:bg-[#FFC300]"
+            className="px-6 py-3 bg-white bg-opacity-50 border border-white text-black rounded-full shadow-md hover:bg-opacity-80 transition"
           >
             LUNCH
           </button>
           <button
             onClick={() => handleFormLoad("dinner")}
-            className="px-6 py-3 bg-[#C70039] rounded-full shadow-md hover:bg-[#1b4f72]"
+            className="px-6 py-3 bg-white bg-opacity-50 border border-white text-black rounded-full shadow-md hover:bg-opacity-80 transition"
           >
             DINNER
           </button>

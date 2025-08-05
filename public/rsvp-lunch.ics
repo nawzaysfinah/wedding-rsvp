@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Singapore:20251025T120000
+DTEND;TZID=Asia/Singapore:20251025T140000
+SUMMARY:💍 Wedding Lunch - Quan Huan & Syazwan at Burkill Hall 🎉
+DESCRIPTION:Thank you for RSVPing! 🍽️\n\nLunch Reception\n11:30 AM – 2:00 PM
+LOCATION:Burkill Hall\nNational Orchid Garden\n\n🌻 Singapore Botanic Garden 🌷\n\n1 Cluny Road, 257683
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Wedding Lunch
+END:VALARM
+END:VEVENT
+END:VCALENDAR
